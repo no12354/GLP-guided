@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { GA_MEASUREMENT_ID, FORM_ENDPOINT, QUIZ_SPLIT } from "../lib/site-config";
+import { QUIZ_SPLIT } from "../lib/site-config";
 
 type Variant = "quiz" | "direct";
 
@@ -106,15 +106,13 @@ export default function Quiz({ ctaUrl }: { ctaUrl: string }) {
   const submitEmail = async (e: FormEvent) => {
     e.preventDefault();
     track("quiz_email_submit", {});
-    if (FORM_ENDPOINT) {
-      try {
-        await fetch(FORM_ENDPOINT, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({ email, ...answers, source: "glpguideline-quiz" }),
-        });
-      } catch { /* never block the handoff */ }
-    }
+    try {
+      await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+    } catch { /* never block the handoff */ }
     goReadyRx(true);
   };
 
