@@ -10,9 +10,30 @@ import Quiz from "./components/Quiz";
 
 const CTA_URL = "#"; // ← replace "#" with your ReadyRx affiliate link
 
+const SITE = "https://glpguideline.com";
+
+const FAQS: { q: string; a: string }[] = [
+  { q: "What is GLP Guideline?", a: "GLP Guideline is an independent education and referral site. We help you understand GLP-1 weight-loss options and connect you with a licensed telehealth provider. We are not a pharmacy or medical provider, and we don't provide medical advice." },
+  { q: "Do I qualify?", a: "Eligibility is determined by a licensed clinician based on your health history and assessment responses. You can complete a quick online assessment to find out whether treatment may be appropriate for you." },
+  { q: "How much does it cost?", a: "Plans through the telehealth provider start around $88/month for semaglutide and $158/month for tirzepatide. Final pricing depends on the clinician's evaluation and the plan you choose." },
+  { q: "How does dosing work?", a: "Dosing is personalized by the prescribing clinician based on your progress and tolerance. You can message the provider's care team with questions throughout your plan." },
+  { q: "Is this legitimate?", a: "The telehealth partner works only with U.S.-licensed clinicians and accredited U.S. pharmacies, and operates on a HIPAA-compliant platform. Eligibility and prescriptions are at the sole discretion of the licensed provider." },
+  { q: "How fast does it ship?", a: "If you're prescribed treatment, medication is shipped discreetly from a licensed U.S. pharmacy, and refills are sent before you run out." },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": SITE + "/#org", name: "GLP Guideline", url: SITE, email: "hello@glpguideline.com", description: "Independent education and referral for GLP-1 weight-loss care." },
+    { "@type": "WebSite", "@id": SITE + "/#website", url: SITE, name: "GLP Guideline", publisher: { "@id": SITE + "/#org" } },
+    { "@type": "FAQPage", mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
+  ],
+};
+
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {/* Announcement bar */}
       <div className="announce">
         GLP-1 plans from <strong>$88/mo</strong> through a licensed U.S.
