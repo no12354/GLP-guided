@@ -6,6 +6,7 @@
 
 import AnimatedButton from "./components/AnimatedButton";
 import Icon from "./components/icons";
+import Quiz from "./components/Quiz";
 
 const CTA_URL = "#"; // ← replace "#" with your ReadyRx affiliate link
 
@@ -32,7 +33,7 @@ export default function Home() {
               <a href="#why">Why GLP-1</a>
               <a href="#faq">FAQ</a>
             </span>
-            <a className="btn btn-primary" href={CTA_URL}>
+            <a className="btn btn-primary" href={CTA_URL} data-quiz-cta>
               Check Eligibility
             </a>
           </nav>
@@ -54,7 +55,7 @@ export default function Home() {
               tirzepatide — fully online, no insurance required.
             </p>
             <div className="hero__cta">
-              <AnimatedButton href={CTA_URL} className="btn btn-primary btn-lg">
+              <AnimatedButton href={CTA_URL} data-quiz-cta className="btn btn-primary btn-lg">
                 Check Eligibility →
               </AnimatedButton>
               <a className="btn btn-ghost btn-lg" href="#how">
@@ -218,7 +219,7 @@ export default function Home() {
                   <span className="ck">✓</span> Cancel or change anytime
                 </li>
               </ul>
-              <a className="btn btn-primary" href={CTA_URL}>
+              <a className="btn btn-primary" href={CTA_URL} data-quiz-cta>
                 Check Eligibility
               </a>
             </div>
@@ -245,7 +246,7 @@ export default function Home() {
                   <span className="ck">✓</span> Cancel or change anytime
                 </li>
               </ul>
-              <a className="btn btn-ghost" href={CTA_URL}>
+              <a className="btn btn-ghost" href={CTA_URL} data-quiz-cta>
                 Check Eligibility
               </a>
             </div>
@@ -341,7 +342,7 @@ export default function Home() {
               Find out in minutes whether GLP-1 treatment through a licensed
               telehealth provider is right for you. No commitment to check.
             </p>
-            <AnimatedButton href={CTA_URL} className="btn btn-primary btn-lg">
+            <AnimatedButton href={CTA_URL} data-quiz-cta className="btn btn-primary btn-lg">
               Check Eligibility →
             </AnimatedButton>
             <div style={{ marginTop: 18, fontSize: 13, opacity: 0.85 }}>
@@ -463,7 +464,7 @@ export default function Home() {
             <div>
               <h4>Contact</h4>
               <a href="mailto:hello@glpguideline.com">hello@glpguideline.com</a>
-              <a href={CTA_URL}>Check eligibility</a>
+              <a href={CTA_URL} data-quiz-cta>Check eligibility</a>
             </div>
           </div>
           <div className="footer__legal">
@@ -488,6 +489,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Quiz funnel + A/B test — opens on CTA click for the quiz variant */}
+      <Quiz ctaUrl={CTA_URL} />
     </>
   );
 }
