@@ -4,6 +4,8 @@
 //    Every "Check Eligibility" / "Get Started" button uses it.
 // ============================================================
 
+import AnimatedButton from "./components/AnimatedButton";
+
 const CTA_URL = "#"; // ← replace "#" with your ReadyRx affiliate link
 
 export default function Home() {
@@ -51,9 +53,9 @@ export default function Home() {
               tirzepatide — fully online, no insurance required.
             </p>
             <div className="hero__cta">
-              <a className="btn btn-primary btn-lg" href={CTA_URL}>
+              <AnimatedButton href={CTA_URL} className="btn btn-primary btn-lg">
                 Check Eligibility →
-              </a>
+              </AnimatedButton>
               <a className="btn btn-ghost btn-lg" href="#how">
                 How it works
               </a>
@@ -333,9 +335,9 @@ export default function Home() {
               Find out in minutes whether GLP-1 treatment through a licensed
               telehealth provider is right for you. No commitment to check.
             </p>
-            <a className="btn btn-primary btn-lg" href={CTA_URL}>
+            <AnimatedButton href={CTA_URL} className="btn btn-primary btn-lg">
               Check Eligibility →
-            </a>
+            </AnimatedButton>
             <div style={{ marginTop: 18, fontSize: 13, opacity: 0.85 }}>
               Advertising disclosure: GLP Guideline is an independent affiliate
               and may earn a commission if you sign up through our links.
