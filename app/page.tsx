@@ -71,6 +71,11 @@ export default function Home() {
                 <span className="tickline">✓</span> Clinician review required
               </span>
             </div>
+            <div className="hero__trust">
+              <span>🛡️ LegitScript-certified</span>
+              <span>🔒 HIPAA-compliant</span>
+              <span>👩‍⚕️ U.S.-licensed clinicians</span>
+            </div>
           </div>
 
           {/* Visual card */}
