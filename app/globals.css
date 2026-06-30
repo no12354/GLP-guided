@@ -138,6 +138,7 @@ h2.section-title { font-size: clamp(28px, 4vw, 40px); margin-bottom: 14px; }
 .nav a { color: var(--slate); font-weight: 600; font-size: 15px; }
 .nav a:hover { color: var(--ink); }
 .header .btn { padding: 11px 22px; font-size: 15px; }
+.nav__links { display: flex; align-items: center; gap: 28px; }
 @media (max-width: 860px) { .nav__links { display: none; } }
 
 /* ---------- Hero ---------- */

@@ -26,7 +26,7 @@ export default function Home() {
             GLP&nbsp;Guideline
           </a>
           <nav className="nav">
-            <span className="nav__links" style={{ display: "flex", gap: 28 }}>
+            <span className="nav__links">
               <a href="#how">How it works</a>
               <a href="#pricing">Pricing</a>
               <a href="#why">Why GLP-1</a>
