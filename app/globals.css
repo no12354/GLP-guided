@@ -179,10 +179,14 @@ h2.section-title { font-size: clamp(28px, 4vw, 40px); margin-bottom: 14px; }
   position: relative;
   border-radius: var(--radius-lg);
   padding: 30px;
-  background: linear-gradient(155deg, var(--green-700), var(--green-900));
+  background-image:
+    linear-gradient(to top, rgba(10, 61, 46, 0.94) 0%, rgba(10, 61, 46, 0.34) 52%, rgba(10, 61, 46, 0.10) 100%),
+    url("/hero.webp");
+  background-size: cover;
+  background-position: center top;
   color: #eafaf3;
   box-shadow: var(--shadow-md);
-  min-height: 380px;
+  min-height: 520px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -213,7 +217,18 @@ h2.section-title { font-size: clamp(28px, 4vw, 40px); margin-bottom: 14px; }
 
 @media (max-width: 880px) {
   .hero__grid { grid-template-columns: 1fr; gap: 36px; padding: 48px 0 56px; }
-  .hero__visual { min-height: 320px; }
+  .hero__visual { min-height: 360px; }
+}
+
+/* ---------- Lifestyle image band ---------- */
+.imgband {
+  width: 100%;
+  height: clamp(220px, 32vw, 380px);
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: block;
+  margin-top: 48px;
 }
 
 /* ---------- Trust strip ---------- */

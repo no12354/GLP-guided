@@ -166,6 +166,15 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Lifestyle band — online care */}
+      <div className="container">
+        <img
+          className="imgband"
+          src="/online-care.webp"
+          alt="Managing GLP-1 care online from the comfort of home"
+        />
+      </div>
+
       {/* Pricing */}
       <section className="section bg-cream" id="pricing">
         <div className="container center">
@@ -305,6 +314,15 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Lifestyle band — active living */}
+      <div className="container">
+        <img
+          className="imgband"
+          src="/lifestyle.webp"
+          alt="An active, healthy lifestyle outdoors"
+        />
+      </div>
 
       {/* CTA band */}
       <section className="section--tight">
