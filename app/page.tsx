@@ -5,6 +5,7 @@
 // ============================================================
 
 import AnimatedButton from "./components/AnimatedButton";
+import Icon from "./components/icons";
 
 const CTA_URL = "#"; // ← replace "#" with your ReadyRx affiliate link
 
@@ -13,7 +14,7 @@ export default function Home() {
     <>
       {/* Announcement bar */}
       <div className="announce">
-        🎉 GLP-1 plans from <strong>$88/mo</strong> through a licensed U.S.
+        GLP-1 plans from <strong>$88/mo</strong> through a licensed U.S.
         telehealth provider — see if you qualify in minutes.
       </div>
 
@@ -72,9 +73,9 @@ export default function Home() {
               </span>
             </div>
             <div className="hero__trust">
-              <span>🛡️ LegitScript-certified</span>
-              <span>🔒 HIPAA-compliant</span>
-              <span>👩‍⚕️ U.S.-licensed clinicians</span>
+              <span className="trust-chip"><Icon name="shield" size={16} /> LegitScript-certified</span>
+              <span className="trust-chip"><Icon name="lock" size={16} /> HIPAA-compliant</span>
+              <span className="trust-chip"><Icon name="clinician" size={16} /> U.S.-licensed clinicians</span>
             </div>
           </div>
 
@@ -112,16 +113,16 @@ export default function Home() {
       <section className="trust">
         <div className="container trust__grid">
           <div className="trust__item">
-            <span className="trust__ic">🛡️</span> LegitScript-certified partner
+            <span className="trust__ic"><Icon name="shield" /></span> LegitScript-certified partner
           </div>
           <div className="trust__item">
-            <span className="trust__ic">👩‍⚕️</span> Board-certified U.S. clinicians
+            <span className="trust__ic"><Icon name="clinician" /></span> Board-certified U.S. clinicians
           </div>
           <div className="trust__item">
-            <span className="trust__ic">💊</span> Licensed U.S. pharmacies
+            <span className="trust__ic"><Icon name="pharmacy" /></span> Licensed U.S. pharmacies
           </div>
           <div className="trust__item">
-            <span className="trust__ic">🔒</span> HIPAA-compliant platform
+            <span className="trust__ic"><Icon name="lock" /></span> HIPAA-compliant platform
           </div>
         </div>
       </section>
@@ -271,7 +272,7 @@ export default function Home() {
         <div className="container">
           <div className="features">
             <div className="feature">
-              <div className="feature__ic">📈</div>
+              <div className="feature__ic"><Icon name="chart" size={24} /></div>
               <h3>Evidence-based treatments</h3>
               <p>
                 Semaglutide and tirzepatide have been studied extensively for
@@ -279,7 +280,7 @@ export default function Home() {
               </p>
             </div>
             <div className="feature">
-              <div className="feature__ic">💬</div>
+              <div className="feature__ic"><Icon name="chat" size={24} /></div>
               <h3>Ongoing clinician support</h3>
               <p>
                 Message licensed clinicians about dosing, tolerance, and progress
@@ -287,7 +288,7 @@ export default function Home() {
               </p>
             </div>
             <div className="feature">
-              <div className="feature__ic">🚚</div>
+              <div className="feature__ic"><Icon name="truck" size={24} /></div>
               <h3>Free &amp; discreet shipping</h3>
               <p>
                 Medication, if prescribed, is delivered to your door from a
@@ -295,7 +296,7 @@ export default function Home() {
               </p>
             </div>
             <div className="feature">
-              <div className="feature__ic">💳</div>
+              <div className="feature__ic"><Icon name="card" size={24} /></div>
               <h3>No insurance required</h3>
               <p>
                 Transparent monthly pricing with no hidden fees. Cancel or change
@@ -303,7 +304,7 @@ export default function Home() {
               </p>
             </div>
             <div className="feature">
-              <div className="feature__ic">📱</div>
+              <div className="feature__ic"><Icon name="device" size={24} /></div>
               <h3>100% online process</h3>
               <p>
                 From assessment to refills, everything happens online — no
@@ -311,7 +312,7 @@ export default function Home() {
               </p>
             </div>
             <div className="feature">
-              <div className="feature__ic">🔁</div>
+              <div className="feature__ic"><Icon name="refresh" size={24} /></div>
               <h3>On-time refills</h3>
               <p>
                 Refills are shipped before you run out, so you can stay
