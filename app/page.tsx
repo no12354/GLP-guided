@@ -7,6 +7,8 @@
 import AnimatedButton from "./components/AnimatedButton";
 import Icon from "./components/icons";
 import Quiz from "./components/Quiz";
+import GuideCapture from "./components/GuideCapture";
+import StickyCta from "./components/StickyCta";
 
 const CTA_URL = "#"; // ← replace "#" with your ReadyRx affiliate link
 
@@ -65,10 +67,6 @@ export default function Home() {
       <section className="hero">
         <div className="container hero__grid">
           <div className="hero__copy">
-            <div className="rating">
-              <span className="stars">★★★★★</span>
-              <small>Trusted guidance for GLP-1 weight-loss care</small>
-            </div>
             <h1>See if you qualify for GLP-1 weight-loss medication</h1>
             <p className="hero__sub">
               GLP Guideline helps you understand your options and connect with a
@@ -354,6 +352,9 @@ export default function Home() {
         />
       </div>
 
+      {/* Lead magnet — free cost guide */}
+      <GuideCapture />
+
       {/* CTA band */}
       <section className="section--tight">
         <div className="container">
@@ -510,6 +511,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Sticky mobile CTA */}
+      <StickyCta ctaUrl={CTA_URL} />
 
       {/* Quiz funnel + A/B test — opens on CTA click for the quiz variant */}
       <Quiz ctaUrl={CTA_URL} />

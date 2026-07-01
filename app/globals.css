@@ -450,3 +450,53 @@ h2.section-title { font-size: clamp(28px, 4vw, 40px); margin-bottom: 14px; }
 .quiz-skip:hover { color: var(--green-900); }
 .quiz-disclaimer { font-size: 12px; color: var(--slate); margin-top: 14px; line-height: 1.5; }
 @media (max-width: 460px) { .quiz-modal { padding: 26px 20px 22px; } .quiz-q { font-size: 20px; } }
+
+/* ── Lead-magnet guide band ─────────────────────────────── */
+.guide-band {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 36px;
+  align-items: center;
+  background: var(--paper, #fff);
+  border: 1px solid var(--line, #e6e8ec);
+  border-radius: 18px;
+  padding: 36px 40px;
+  box-shadow: 0 10px 30px rgba(15, 30, 45, 0.06);
+}
+.guide-band h2 { margin: 6px 0 10px; }
+.guide-band__copy p { color: var(--slate); max-width: 46ch; }
+.guide-band__form form { display: flex; flex-direction: column; gap: 10px; }
+.guide-band__form input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  border: 1px solid var(--line, #d6dae0);
+  border-radius: 10px;
+  outline: none;
+}
+.guide-band__form input:focus { border-color: var(--accent); }
+.guide-band__fine { font-size: 12px; color: var(--slate); margin-top: 2px; }
+.guide-band__err { font-size: 13px; color: #b4232a; }
+.guide-band__done p { margin-bottom: 12px; }
+@media (max-width: 860px) {
+  .guide-band { grid-template-columns: 1fr; padding: 26px 22px; gap: 18px; }
+}
+
+/* ── Sticky mobile CTA ──────────────────────────────────── */
+.sticky-cta {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 60;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--line, #e6e8ec);
+  transform: translateY(110%);
+  transition: transform 0.25s ease;
+  display: none;
+}
+.sticky-cta--show { transform: translateY(0); }
+.sticky-cta .btn { width: 100%; display: block; text-align: center; }
+@media (max-width: 860px) {
+  .sticky-cta { display: block; }
+}
